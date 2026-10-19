@@ -1,0 +1,1086 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fbf6f1">
+<title>Habban & Rahin | Wedding Invitation</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Gujarati:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream: #fbf6f1;
+  --paper: #fffdf9;
+  --rose: #bd777b;
+  --rose-dark: #8d4f59;
+  --sage: #7f9279;
+  --sage-dark: #4e6552;
+  --ink: #433a38;
+  --muted: #7f7470;
+  --gold: #c6a36a;
+  --line: #eadbd2;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+body.gujarati {
+  font-family: "Noto Sans Gujarati", sans-serif;
+}
+
+h1, h2, h3, .serif {
+  font-family: "Playfair Display", Georgia, serif;
+  line-height: 1.25;
+  font-weight: 500;
+}
+
+button, a { -webkit-tap-highlight-color: transparent; }
+
+/* Language selector */
+.language-switch {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 100;
+  display: flex;
+  gap: 4px;
+  padding: 5px;
+  background: #fffdf4ee;
+  border: 1px solid var(--line);
+  border-radius: 50px;
+  box-shadow: 0 5px 20px #75554b18;
+}
+
+.language-switch button {
+  border: none;
+  padding: 9px 13px;
+  border-radius: 50px;
+  background: transparent;
+  color: var(--rose-dark);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.language-switch button.active {
+  background: var(--rose-dark);
+  color: white;
+}
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 100px 22px 70px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 10% 15%, #e9d7cf 0, transparent 28%),
+    radial-gradient(ellipse at 90% 80%, #dce4d7 0, transparent 30%),
+    linear-gradient(135deg, #fcf8f3, #f6e9e4 55%, #fbf6ee);
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 330px;
+  height: 330px;
+  border: 1px solid #c6a36a77;
+  border-radius: 50%;
+  top: -180px;
+  left: -150px;
+  box-shadow: 0 0 0 18px #fff8f2a6,
+              0 0 0 38px #c6a36a20;
+  pointer-events: none;
+}
+
+.hero::after {
+  top: auto;
+  left: auto;
+  bottom: -220px;
+  right: -130px;
+  width: 430px;
+  height: 430px;
+  border-color: #7f927977;
+  box-shadow: 0 0 0 20px #7f92791c,
+              0 0 0 42px #fff7f0a6;
+}
+
+.flower {
+  position: absolute;
+  color: var(--rose);
+  opacity: .3;
+  font-size: clamp(45px, 9vw, 100px);
+  animation: float 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.flower.one { left: 7%; top: 19%; }
+.flower.two {
+  right: 7%;
+  top: 25%;
+  color: var(--sage);
+  animation-delay: -2s;
+}
+.flower.three {
+  left: 13%;
+  bottom: 10%;
+  font-size: 55px;
+  animation-delay: -4s;
+}
+
+.hero-content {
+  position: relative;
+  max-width: 850px;
+  animation: rise 1.2s ease both;
+}
+
+.eyebrow {
+  color: var(--sage-dark);
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  font-size: .78rem;
+  font-weight: 700;
+}
+
+.bismillah {
+  margin: 25px 0 16px;
+  font-size: 1.3rem;
+  color: var(--rose-dark);
+}
+
+.hero h1 {
+  color: var(--rose-dark);
+  font-size: clamp(3.4rem, 10vw, 7rem);
+  line-height: 1.05;
+  letter-spacing: -.04em;
+  margin: 15px 0;
+}
+
+.ampersand {
+  color: var(--gold);
+  font-style: italic;
+  font-size: .6em;
+}
+
+.hero-sub {
+  max-width: 600px;
+  margin: 22px auto;
+  color: var(--muted);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.date-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin: 22px auto;
+  padding: 12px 18px;
+  border-top: 1px solid var(--gold);
+  border-bottom: 1px solid var(--gold);
+  color: var(--sage-dark);
+  font-weight: 700;
+  letter-spacing: .07em;
+}
+
+.date-line span { color: var(--gold); }
+
+.ornament {
+  color: var(--gold);
+  font-size: 1.5rem;
+  letter-spacing: .3em;
+  margin-top: 18px;
+}
+
+/* General sections */
+section { padding: 82px 22px; }
+
+.section-inner {
+  max-width: 1050px;
+  margin: auto;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 42px;
+}
+
+.section-heading h2 {
+  font-size: clamp(2.2rem, 5vw, 3.3rem);
+  color: var(--rose-dark);
+  margin: 12px 0;
+}
+
+.section-heading p { color: var(--muted); }
+
+/* Welcome */
+.intro {
+  background: var(--paper);
+  text-align: center;
+}
+
+.intro-card {
+  max-width: 760px;
+  margin: auto;
+  padding: 35px 28px;
+  background: linear-gradient(120deg, #fffdf9, #fcf5f0);
+  border: 1px solid var(--line);
+  outline: 1px solid #eadbd255;
+  outline-offset: 7px;
+}
+
+.intro-card p {
+  font-size: 1.08rem;
+  color: #6f625d;
+}
+
+.dua {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.4rem;
+  color: var(--sage-dark);
+  font-style: italic;
+  margin-top: 20px;
+}
+
+/* Countdown */
+.countdown-section { background: #e8ede4; }
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  max-width: 750px;
+  margin: auto;
+}
+
+.time-box {
+  text-align: center;
+  padding: 23px 8px;
+  background: #fffdf8;
+  border: 1px solid #d3ddcf;
+  border-radius: 13px;
+  box-shadow: 0 8px 24px #4e65520c;
+}
+
+.time-box strong {
+  display: block;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  color: var(--rose-dark);
+  line-height: 1.2;
+}
+
+.time-box span {
+  display: block;
+  margin-top: 9px;
+  color: var(--sage-dark);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: .7rem;
+  font-weight: 700;
+}
+
+.countdown-note {
+  text-align: center;
+  color: var(--sage-dark);
+  margin-top: 25px;
+}
+
+/* Events */
+.events { background: var(--cream); }
+
+.event-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.event-card {
+  position: relative;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  padding: 27px;
+  box-shadow: 0 15px 40px #694b4310;
+  overflow: hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 45px #694b431c;
+}
+
+.event-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: var(--sage);
+}
+
+.event-card:nth-child(even)::before { background: var(--rose); }
+
+.event-top {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.event-icon {
+  flex: 0 0 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e9eee5;
+  color: var(--sage-dark);
+  font-size: 1.35rem;
+}
+
+.event-card:nth-child(even) .event-icon {
+  background: #f5e5e4;
+  color: var(--rose-dark);
+}
+
+.event-card h3 {
+  font-size: 1.65rem;
+  margin: 3px 0 8px;
+  color: var(--rose-dark);
+}
+
+.event-date {
+  color: var(--sage-dark);
+  font-weight: 700;
+  font-size: .9rem;
+}
+
+.event-time {
+  color: var(--muted);
+  margin: 3px 0 15px;
+}
+
+.venue { font-weight: 700; margin-bottom: 3px; }
+.address { color: var(--muted); font-size: .94rem; margin-top: 0; }
+
+.map-link {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--rose-dark);
+  border: 1px solid var(--rose);
+  border-radius: 30px;
+  padding: 9px 15px;
+  font-size: .88rem;
+  font-weight: 700;
+  margin-top: 8px;
+  transition: background .2s, color .2s;
+}
+
+.map-link:hover {
+  background: var(--rose-dark);
+  color: white;
+}
+
+.event-card:last-child {
+  grid-column: 1 / -1;
+  width: calc(50% - 11px);
+  justify-self: center;
+}
+
+/* Closing */
+.closing {
+  text-align: center;
+  background: #f4e7e2;
+}
+
+.closing h2 {
+  color: var(--rose-dark);
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.closing p {
+  max-width: 680px;
+  margin: auto;
+  color: #6e5c57;
+}
+
+footer {
+  background: #526650;
+  color: #f9f3eb;
+  text-align: center;
+  padding: 35px 20px;
+}
+
+.footer-names {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.8rem;
+}
+
+footer p { color: #e0e7dc; margin: 6px 0; }
+
+/* Entry animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .75s ease, transform .75s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-7deg); }
+  50% { transform: translateY(-15px) rotate(8deg); }
+}
+
+@media (max-width: 700px) {
+  section { padding: 65px 17px; }
+  .hero { min-height: 90vh; }
+  .event-list { grid-template-columns: 1fr; }
+  .event-card:last-child {
+    grid-column: auto;
+    width: 100%;
+  }
+  .countdown-grid { gap: 8px; }
+  .time-box { padding: 18px 4px; }
+  .time-box span { font-size: .6rem; letter-spacing: .04em; }
+  .event-card { padding: 23px 20px; }
+  .flower.one { left: 1%; }
+  .flower.two { right: 1%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
+
+
+/* Automatic opening animation — added without changing the original website */
+#welcome-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: 24px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 10% 15%, #e9d7cf 0, transparent 35%),
+    radial-gradient(ellipse at 90% 80%, #dce4d7 0, transparent 38%),
+    linear-gradient(135deg, #fcf8f3, #f6e9e4 55%, #fbf6ee);
+  animation: welcomeFadeOut 1.1s ease-in-out 4.2s forwards;
+}
+
+.welcome-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 760px;
+  animation: welcomeRise 1.2s ease both;
+}
+
+.welcome-flower {
+  margin-bottom: 18px;
+  color: var(--rose);
+  font-size: clamp(42px, 8vw, 66px);
+  animation: welcomeBloom 1.4s ease both, float 5s ease-in-out 1.4s infinite;
+}
+
+.welcome-eyebrow {
+  color: var(--sage-dark);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: welcomeTextIn .8s ease .45s forwards;
+}
+
+.welcome-content h1 {
+  margin: 18px 0;
+  color: var(--rose-dark);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2.8rem, 9vw, 5.8rem);
+  font-weight: 500;
+  line-height: 1.12;
+  opacity: 0;
+  animation: welcomeTextIn 1s ease .9s forwards;
+}
+
+.welcome-content h1 span {
+  color: var(--gold);
+  font-style: italic;
+  font-size: .65em;
+}
+
+.welcome-divider {
+  width: 0;
+  height: 1px;
+  margin: 22px auto;
+  background: var(--gold);
+  animation: welcomeLineGrow .9s ease 1.6s forwards;
+}
+
+.welcome-date {
+  color: var(--sage-dark);
+  font-size: .9rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  opacity: 0;
+  animation: welcomeTextIn .8s ease 1.8s forwards;
+}
+
+.welcome-message {
+  margin-top: 18px;
+  color: var(--muted);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  opacity: 0;
+  animation: welcomeTextIn .8s ease 2.3s forwards;
+}
+
+.welcome-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+  opacity: 0;
+  animation: welcomeTextIn .8s ease 2.7s forwards;
+}
+
+.welcome-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 165px;
+  padding: 12px 20px;
+  border: 1px solid var(--rose-dark);
+  border-radius: 50px;
+  background: var(--rose-dark);
+  color: #fffdf9;
+  font-size: .9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+
+.welcome-actions a.secondary {
+  background: transparent;
+  color: var(--rose-dark);
+}
+
+.welcome-actions a:hover {
+  transform: translateY(-2px);
+  background: var(--sage-dark);
+  border-color: var(--sage-dark);
+  color: white;
+}
+
+@media (max-width: 480px) {
+  .welcome-actions { gap: 9px; margin-top: 22px; }
+  .welcome-actions a, .hero-actions a { width: min(100%, 240px); }
+  .hero-actions { gap: 9px; margin-top: 20px; }
+}
+
+/* Quick links shown on the main hero AFTER the opening animation */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+  animation: rise .8s ease .2s both;
+}
+
+.hero-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 165px;
+  padding: 12px 20px;
+  border: 1px solid var(--rose-dark);
+  border-radius: 50px;
+  background: var(--rose-dark);
+  color: #fffdf9;
+  font-size: .9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+
+.hero-actions a.secondary {
+  background: transparent;
+  color: var(--rose-dark);
+}
+
+.hero-actions a:hover {
+  transform: translateY(-2px);
+  background: var(--sage-dark);
+  border-color: var(--sage-dark);
+  color: white;
+}
+
+.welcome-decor {
+  position: absolute;
+  color: #bd777b30;
+  font-size: clamp(65px, 12vw, 115px);
+  pointer-events: none;
+}
+
+.welcome-decor.top { top: 5%; left: 5%; transform: rotate(-25deg); }
+.welcome-decor.bottom { right: 5%; bottom: 5%; transform: rotate(25deg); }
+
+@keyframes welcomeRise {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes welcomeBloom {
+  from { opacity: 0; transform: scale(.35) rotate(-35deg); }
+  to { opacity: .9; transform: scale(1) rotate(0); }
+}
+
+@keyframes welcomeTextIn {
+  from { opacity: 0; transform: translateY(13px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes welcomeLineGrow { to { width: 95px; } }
+
+@keyframes welcomeFadeOut {
+  to { opacity: 0; visibility: hidden; pointer-events: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #welcome-screen { animation: none; display: none; }
+  .welcome-content, .welcome-flower, .welcome-eyebrow,
+  .welcome-content h1, .welcome-divider, .welcome-date,
+  .welcome-message { animation: none; opacity: 1; }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Automatic welcome animation: no button or tapping required -->
+<div id="welcome-screen" aria-hidden="true">
+  <span class="welcome-decor top">❀</span>
+  <span class="welcome-decor bottom">❦</span>
+  <div class="welcome-content">
+    <div class="welcome-flower">❀</div>
+    <div class="welcome-eyebrow">A Wedding Celebration</div>
+    <h1>Habban <span>&amp;</span><br>Rahin</h1>
+    <div class="welcome-divider"></div>
+    <p class="welcome-date">26–27 DECEMBER 2026</p>
+    <p class="welcome-message">A beautiful beginning, Insha’Allah</p>
+  </div>
+</div>
+
+
+<div class="language-switch" aria-label="Choose language">
+  <button id="enBtn" class="active" type="button">EN</button>
+  <button id="guBtn" type="button">ગુજરાતી</button>
+</div>
+
+<header class="hero">
+  <span class="flower one" aria-hidden="true">❀</span>
+  <span class="flower two" aria-hidden="true">✿</span>
+  <span class="flower three" aria-hidden="true">❁</span>
+
+  <div class="hero-content">
+    <div class="eyebrow"
+      data-en="A Wedding Celebration"
+      data-gu="લગ્ન સમારોહ">A Wedding Celebration</div>
+
+    <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+
+    <h1>Habban <span class="ampersand">&amp;</span><br>Rahin</h1>
+
+    <p class="hero-sub"
+      data-en="With the blessings of Allah and our families, we invite you to share in our joy."
+      data-gu="અલ્લાહ અને અમારા પરિવારના આશીર્વાદ સાથે, અમારી ખુશીમાં સહભાગી થવા આપને હાર્દિક આમંત્રણ છે.">
+      With the blessings of Allah and our families, we invite you to share in our joy.
+    </p>
+
+    <div class="date-line">
+      <span>✦</span>
+      <span data-en="26–27 DECEMBER 2026"
+            data-gu="૨૬–૨૭ ડિસેમ્બર ૨૦૨૬">26–27 DECEMBER 2026</span>
+      <span>✦</span>
+    </div>
+
+    <div class="ornament">❧ ❀ ❧</div>
+
+    <nav class="hero-actions" aria-label="Quick navigation">
+      <a href="#countdown">View Countdown</a>
+      <a href="#events" class="secondary">View Events</a>
+    </nav>
+  </div>
+</header>
+
+<section class="intro">
+  <div class="section-inner reveal">
+    <div class="section-heading">
+      <div class="eyebrow"
+        data-en="Together with our families"
+        data-gu="અમારા પરિવાર સાથે">Together with our families</div>
+      <h2 data-en="A New Chapter Begins"
+          data-gu="નવી સફરની શરૂઆત">A New Chapter Begins</h2>
+    </div>
+
+    <div class="intro-card">
+      <p data-en="By the grace of Allah, two hearts and two families come together. We would be honoured to have you with us as we celebrate the Nikah and the joyful days around it."
+         data-gu="અલ્લાહની રહેમતથી બે દિલ અને બે પરિવારો એક થઈ રહ્યા છે. અમારા નિકાહ અને આ ખુશીના પ્રસંગોમાં આપની હાજરી અમારે માટે સન્માનની વાત રહેશે.">
+        By the grace of Allah, two hearts and two families come together. We would be honoured to have you with us as we celebrate the Nikah and the joyful days around it.
+      </p>
+
+      <div class="dua"
+        data-en="“And He placed between you affection and mercy.”"
+        data-gu="“અને તેણે તમારી વચ્ચે પ્રેમ અને દયા મૂકી.”">
+        “And He placed between you affection and mercy.”
+      </div>
+
+      <p data-en="— Qur’an 30:21"
+         data-gu="— કુરઆન ૩૦:૨૧">— Qur’an 30:21</p>
+    </div>
+  </div>
+</section>
+
+<section class="countdown-section" id="countdown">
+  <div class="section-inner reveal">
+    <div class="section-heading">
+      <div class="eyebrow"
+        data-en="The Countdown Is On"
+        data-gu="ઉલટી ગણતરી શરૂ">The Countdown Is On</div>
+
+      <h2 data-en="Until the Nikah"
+          data-gu="નિકાહ સુધી">Until the Nikah</h2>
+
+      <p data-en="Saturday, 26 December 2026 · 11:00 AM IST"
+         data-gu="શનિવાર, ૨૬ ડિસેમ્બર ૨૦૨૬ · સવારે ૧૧:૦૦ વાગ્યે">
+        Saturday, 26 December 2026 · 11:00 AM IST
+      </p>
+    </div>
+
+    <div class="countdown-grid" aria-live="polite">
+      <div class="time-box">
+        <strong id="days">—</strong>
+        <span data-en="Days" data-gu="દિવસ">Days</span>
+      </div>
+      <div class="time-box">
+        <strong id="hours">—</strong>
+        <span data-en="Hours" data-gu="કલાક">Hours</span>
+      </div>
+      <div class="time-box">
+        <strong id="minutes">—</strong>
+        <span data-en="Minutes" data-gu="મિનિટ">Minutes</span>
+      </div>
+      <div class="time-box">
+        <strong id="seconds">—</strong>
+        <span data-en="Seconds" data-gu="સેકન્ડ">Seconds</span>
+      </div>
+    </div>
+
+    <p id="countdownNote" class="countdown-note"
+      data-en="Counting down to a beautiful beginning."
+      data-gu="એક સુંદર શરૂઆતની આતુરતાભરી રાહ.">
+      Counting down to a beautiful beginning.
+    </p>
+  </div>
+</section>
+
+<section class="events" id="events">
+  <div class="section-inner">
+    <div class="section-heading reveal">
+      <div class="eyebrow"
+        data-en="Save the Dates"
+        data-gu="તારીખો યાદ રાખશો">Save the Dates</div>
+      <h2 data-en="Wedding Celebrations"
+          data-gu="લગ્ન પ્રસંગો">Wedding Celebrations</h2>
+      <p data-en="We look forward to celebrating these special moments with you."
+         data-gu="આ ખાસ પળો આપની સાથે ઉજવવા આતુર છીએ.">
+        We look forward to celebrating these special moments with you.
+      </p>
+    </div>
+
+    <div class="event-list">
+
+      <!-- EVENT 1 -->
+      <article class="event-card reveal">
+        <div class="event-top">
+          <div class="event-icon">☾</div>
+          <div>
+            <h3 data-en="Nikah" data-gu="નિકાહ">Nikah</h3>
+            <div class="event-date"
+              data-en="Saturday, 26 December 2026"
+              data-gu="શનિવાર, ૨૬ ડિસેમ્બર ૨૦૨૬">
+              Saturday, 26 December 2026
+            </div>
+            <div class="event-time"
+              data-en="11:00 AM"
+              data-gu="સવારે ૧૧:૦૦ વાગ્યે">11:00 AM</div>
+          </div>
+        </div>
+        <p class="venue">Moti Masjid</p>
+        <p class="address" data-en="Kadi, Gujarat" data-gu="કડી, ગુજરાત">Kadi, Gujarat</p>
+        <a class="map-link"
+          href="https://maps.app.goo.gl/FgV5nmovWbi7kEqF9"
+          target="_blank" rel="noopener noreferrer"
+          data-en="↗ Open in Google Maps"
+          data-gu="↗ ગૂગલ મેપ્સમાં જુઓ">↗ Open in Google Maps</a>
+      </article>
+
+      <!-- EVENT 2 -->
+      <article class="event-card reveal">
+        <div class="event-top">
+          <div class="event-icon">❀</div>
+          <div>
+            <h3 data-en="Lunch" data-gu="બપોરનું ભોજન">Lunch</h3>
+            <div class="event-date"
+              data-en="Saturday, 26 December 2026"
+              data-gu="શનિવાર, ૨૬ ડિસેમ્બર ૨૦૨૬">
+              Saturday, 26 December 2026
+            </div>
+            <div class="event-time"
+              data-en="12:30 PM onwards"
+              data-gu="બપોરે ૧૨:૩૦ વાગ્યાથી">12:30 PM onwards</div>
+          </div>
+        </div>
+        <p class="venue">Smt. Khamar Girls School</p>
+        <p class="address" data-en="Kadi, Gujarat" data-gu="કડી, ગુજરાત">Kadi, Gujarat</p>
+        <a class="map-link"
+          href="https://maps.app.goo.gl/wGRmXtBm4myFqUA57"
+          target="_blank" rel="noopener noreferrer"
+          data-en="↗ Open in Google Maps"
+          data-gu="↗ ગૂગલ મેપ્સમાં જુઓ">↗ Open in Google Maps</a>
+      </article>
+
+      <!-- EVENT 3 -->
+      <article class="event-card reveal">
+        <div class="event-top">
+          <div class="event-icon">✧</div>
+          <div>
+            <h3 data-en="Dinner" data-gu="રાત્રિ ભોજન">Dinner</h3>
+            <div class="event-date"
+              data-en="Saturday, 26 December 2026"
+              data-gu="શનિવાર, ૨૬ ડિસેમ્બર ૨૦૨૬">
+              Saturday, 26 December 2026
+            </div>
+            <div class="event-time"
+              data-en="7:30 PM onwards"
+              data-gu="સાંજે ૭:૩૦ વાગ્યાથી">7:30 PM onwards</div>
+          </div>
+        </div>
+        <p class="venue">Aqdas Hall</p>
+        <p class="address"
+          data-en="Pirbordi Chakla, Kadi"
+          data-gu="પીરબોર્ડી ચકલા, કડી">Pirbordi Chakla, Kadi</p>
+        <a class="map-link"
+          href="https://maps.app.goo.gl/CnjubvRgyBY4zKEc9"
+          target="_blank" rel="noopener noreferrer"
+          data-en="↗ Open in Google Maps"
+          data-gu="↗ ગૂગલ મેપ્સમાં જુઓ">↗ Open in Google Maps</a>
+      </article>
+
+      <!-- EVENT 4 -->
+      <article class="event-card reveal">
+        <div class="event-top">
+          <div class="event-icon">♡</div>
+          <div>
+            <h3 data-en="Rukhsati" data-gu="રુખસતી">Rukhsati</h3>
+            <div class="event-date"
+              data-en="Saturday, 26 December 2026"
+              data-gu="શનિવાર, ૨૬ ડિસેમ્બર ૨૦૨૬">
+              Saturday, 26 December 2026
+            </div>
+            <div class="event-time"
+              data-en="10:30 PM"
+              data-gu="રાત્રે ૧૦:૩૦ વાગ્યે">10:30 PM</div>
+          </div>
+        </div>
+        <p class="venue">Fatema Apartment</p>
+        <p class="address"
+          data-en="Ground Floor, Sakarpura"
+          data-gu="ગ્રાઉન્ડ ફ્લોર, સકરપુરા">Ground Floor, Sakarpura</p>
+        <a class="map-link"
+          href="https://maps.app.goo.gl/AKNpJ3z3hbZrHBv58"
+          target="_blank" rel="noopener noreferrer"
+          data-en="↗ Open in Google Maps"
+          data-gu="↗ ગૂગલ મેપ્સમાં જુઓ">↗ Open in Google Maps</a>
+      </article>
+
+      <!-- EVENT 5 -->
+      <article class="event-card reveal">
+        <div class="event-top">
+          <div class="event-icon">❁</div>
+          <div>
+            <h3 data-en="Walimah Lunch"
+                data-gu="વલીમાનો બપોરનો ભોજન સમારંભ">Walimah Lunch</h3>
+            <div class="event-date"
+              data-en="Sunday, 27 December 2026"
+              data-gu="રવિવાર, ૨૭ ડિસેમ્બર ૨૦૨૬">
+              Sunday, 27 December 2026
+            </div>
+            <div class="event-time"
+              data-en="12:30 PM onwards"
+              data-gu="બપોરે ૧૨:૩૦ વાગ્યાથી">12:30 PM onwards</div>
+          </div>
+        </div>
+        <p class="venue">Aqdas Hall</p>
+        <p class="address"
+          data-en="Pirbordi Chakla, Kadi"
+          data-gu="પીરબોર્ડી ચકલા, કડી">Pirbordi Chakla, Kadi</p>
+        <a class="map-link"
+          href="https://maps.app.goo.gl/CnjubvRgyBY4zKEc9"
+          target="_blank" rel="noopener noreferrer"
+          data-en="↗ Open in Google Maps"
+          data-gu="↗ ગૂગલ મેપ્સમાં જુઓ">↗ Open in Google Maps</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="section-inner reveal">
+    <div class="eyebrow"
+      data-en="With Love and Duas"
+      data-gu="પ્રેમ અને દુઆઓ સાથે">With Love and Duas</div>
+    <h2 data-en="Your Presence Is Our Blessing"
+        data-gu="આપની હાજરી અમારે માટે આશીર્વાદ છે">
+      Your Presence Is Our Blessing
+    </h2>
+    <p data-en="May Allah bless this union with love, understanding, barakah, and happiness. We can’t wait to celebrate with you."
+       data-gu="અલ્લાહ આ જોડીને પ્રેમ, સમજણ, બરકત અને ખુશીઓથી નવાજે. આપની સાથે ઉજવણી કરવા આતુર છીએ.">
+      May Allah bless this union with love, understanding, barakah, and happiness. We can’t wait to celebrate with you.
+    </p>
+    <div class="ornament">❧ ❀ ❧</div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-names">Habban &amp; Rahin</div>
+  <p data-en="With the blessings of Allah · December 2026"
+     data-gu="અલ્લાહની રહેમત સાથે · ડિસેમ્બર ૨૦૨૬">
+    With the blessings of Allah · December 2026
+  </p>
+  <p>Made with love ♡</p>
+</footer>
+
+<script>
+// English / Gujarati language toggle
+const translatable = document.querySelectorAll("[data-en][data-gu]");
+const enBtn = document.getElementById("enBtn");
+const guBtn = document.getElementById("guBtn");
+
+function setLanguage(language) {
+  document.documentElement.lang = language === "gu" ? "gu" : "en";
+  document.body.classList.toggle("gujarati", language === "gu");
+
+  translatable.forEach(element => {
+    element.textContent = element.dataset[language];
+  });
+
+  enBtn.classList.toggle("active", language === "en");
+  guBtn.classList.toggle("active", language === "gu");
+  enBtn.setAttribute("aria-pressed", String(language === "en"));
+  guBtn.setAttribute("aria-pressed", String(language === "gu"));
+}
+
+enBtn.addEventListener("click", () => setLanguage("en"));
+guBtn.addEventListener("click", () => setLanguage("gu"));
+
+// Countdown target: 26 December 2026, 11:00 AM IST (UTC+5:30)
+const weddingDate = new Date("2026-12-26T11:00:00+05:30").getTime();
+
+const pad = number => String(number).padStart(2, "0");
+
+function updateCountdown() {
+  const remaining = weddingDate - Date.now();
+  const note = document.getElementById("countdownNote");
+
+  if (remaining <= 0) {
+    ["days", "hours", "minutes", "seconds"].forEach(id => {
+      document.getElementById(id).textContent = "00";
+    });
+
+    note.textContent =
+      document.documentElement.lang === "gu"
+        ? "આજનો શુભ દિવસ આવી ગયો છે!"
+        : "The special day has arrived!";
+    return;
+  }
+
+  document.getElementById("days").textContent =
+    Math.floor(remaining / 86400000);
+
+  document.getElementById("hours").textContent =
+    pad(Math.floor((remaining % 86400000) / 3600000));
+
+  document.getElementById("minutes").textContent =
+    pad(Math.floor((remaining % 3600000) / 60000));
+
+  document.getElementById("seconds").textContent =
+    pad(Math.floor((remaining % 60000) / 1000));
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// Reveal sections as they enter the screen
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll(".reveal").forEach(element => {
+    observer.observe(element);
+  });
+} else {
+  document.querySelectorAll(".reveal").forEach(element => {
+    element.classList.add("visible");
+  });
+}
+</script>
+
+</body>
+</html>
